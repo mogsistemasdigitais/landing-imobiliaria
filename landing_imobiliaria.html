@@ -1,30 +1,60 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Locação Digital para Imobiliárias</title>
   <style>
-    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; background: #f9f9f9; }
-    .container { max-width: 800px; margin: 0 auto; padding: 2rem; background: white; }
-    h1, h2, h3 { color: #003366; }
-    ul { padding-left: 1.2rem; }
-    li { margin-bottom: 0.5rem; }
-    a.button {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      background-color: #0077cc;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      margin-top: 1rem;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    .container {
+      max-width: 960px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    h1, h2, h3 {
+      color: #005187;
+      margin-bottom: 20px;
+    }
+    ul {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+    li {
+      margin-bottom: 10px;
     }
     .highlight {
-      background: #e0f3ff;
-      padding: 1rem;
+      background-color: #e7f3ff;
       border-left: 4px solid #0077cc;
-      margin-bottom: 1rem;
+      padding: 20px;
+      margin: 20px 0;
+    }
+    .button {
+      display: inline-block;
+      background-color: #0077cc;
+      color: #fff;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+    a {
+      color: #0077cc;
+    }
+    .footer {
+      margin-top: 40px;
+      font-size: 0.9em;
     }
   </style>
 </head>
@@ -62,10 +92,13 @@
     <p>Quer conhecer a plataforma, participar do piloto e modernizar sua operação?</p>
     <a href="https://forms.gle/exemplo-do-formulario" target="_blank" class="button">Quero Participar</a>
 
-    <h3>Contato direto</h3>
-    <p>Matheus Gomes<br />
-    E-mail: <a href="mailto:seuemail@exemplo.com">seuemail@exemplo.com</a><br />
-    WhatsApp: (51) 9XXXX-XXXX</p>
+    <div class="footer">
+      <h3>Contato direto</h3>
+      <p>Matheus Gomes<br>
+        E-mail: <a href="mailto:seuemail@exemplo.com">seuemail@exemplo.com</a><br>
+        WhatsApp: (51) 9XXXX-XXXX
+      </p>
+    </div>
   </div>
 </body>
 </html>
