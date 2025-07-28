@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Locação Digital para Imobiliárias</title>
   <style>
     * {
@@ -31,18 +30,33 @@
       background: #fff;
       padding: 40px;
       border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
     h1, h2, h3 {
       color: #015B4A;
       margin-bottom: 20px;
     }
-    ul {
-      margin-left: 20px;
-      margin-bottom: 20px;
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 30px 0;
+      padding: 0;
+      list-style: none;
+      justify-content: space-between;
     }
-    li {
-      margin-bottom: 10px;
+    .features li {
+      flex: 1 1 45%;
+      background-color: #e1f6f0;
+      padding: 15px 20px;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      font-size: 1rem;
+    }
+    @media (max-width: 600px) {
+      .features li {
+        flex: 1 1 100%;
+      }
     }
     .highlight {
       background-color: #e1f6f0;
@@ -72,25 +86,31 @@
 </head>
 <body>
   <header>
-    <img src="logo_inicial_v1.png" alt="Logo MOG Sistemas Digitais">
+    <img src="logo_inicial_v1.png" alt="Logo MOG Sistemas Digitais" />
   </header>
 
   <div class="container">
     <h1>Transforme sua Imobiliária com uma Plataforma 100% Digital</h1>
-    <br>
-    <p>Estamos selecionando <strong>imobiliárias parceiras</strong> em Tramandaí e região para testar uma nova solução digital que moderniza todo o processo de locação e venda de imóveis — do agendamento até o pagamento.</p>
-    <br>
-    <br>
+    <p><strong>Sua imobiliária pode ser pioneira em uma nova era digital!</strong></p>
+    <p>
+      Estamos selecionando imobiliárias da região de Tramandaí para acessar com exclusividade uma <strong>plataforma 100% online</strong> que moderniza todo o processo de locação e venda — da visita à assinatura e pagamento — integrada à identidade da sua imobiliária, <strong>sem necessidade de substituir seu sistema atual</strong>.
+    </p>
+	<br>
+    <p>
+      Sua equipe terá acesso antecipado, com sua marca na plataforma e apoio especializado para <strong>ganhar eficiência e vantagem competitiva</strong>.
+    </p>
+	<br>
+	<br>
     <h2>Funcionalidades da Plataforma</h2>
-    <ul>
+    <ul class="features">
       <li>Agendamento de visitas online (presenciais e virtuais)</li>
       <li>Tour digital dos imóveis (fotos, vídeos ou 360°)</li>
-      <li>Validação de documentos dos clientes (CPF, CNPJ, comprovantes)</li>
-      <li>Assinatura digital de contratos com validade jurídica</li>
-      <li>Solicitação de locação direta pelo site</li>
+      <li>Validação de documentos para locação ou compra</li>
+      <li>Assinatura digital com validade jurídica</li>
+      <li>Solicitação de locação ou compra direto pelo site</li>
       <li>Pagamentos via Pix, boleto ou cartão</li>
-      <li>Painel de gestão para sua equipe</li>
-      <li>Customização com a identidade visual da sua imobiliária</li>
+      <li>Painel de gestão de imóveis, clientes e contratos</li>
+      <li>Customização com a identidade visual da imobiliária</li>
     </ul>
 
     <h2>Por que ser um parceiro-piloto?</h2>
@@ -104,20 +124,25 @@
     </div>
 
     <h3>Quem pode participar?</h3>
-    <p>Imobiliárias de pequeno e médio porte de Tramandaí, Imbé, Capão da Canoa, Xangri-lá e região.</p>
-    <br>
-    <br>
+    <p>
+      Imobiliárias de pequeno e médio porte de Tramandaí, Imbé, Capão da Canoa, Xangri-lá e região.
+    </p>
+
     <h3>Inscreva-se como parceiro-piloto</h3>
-    <p>Quer conhecer a plataforma, participar do piloto e modernizar sua operação?<br>
-	<a href="https://forms.gle/R22xMDAnUMBVQ4ECA" target="_blank" class="button">Quero Participar</a>
-	</p><br>
-    <p><strong>Ao clicar no botão a cima, você será direcionado a um formulário com perguntas que nos ajudam a entender seu cenário atual. Isso nos permite oferecer uma proposta mais personalizada para sua imobiliária.</strong></p>
-   
+    <p>
+      Quer conhecer a plataforma, participar do piloto e modernizar sua operação?
+    </p>
+    <a href="https://forms.gle/R22xMDAnUMBVQ4ECA" target="_blank" class="button">Quero Participar</a>
+	<br>
+	<br>
+    <p><strong>Ao clicar no botão, você responderá um formulário que nos permite entender seu cenário atual e oferecer uma proposta alinhada às suas necessidades.</strong></p>
+
     <div class="footer">
       <h3>Contato direto</h3>
       <p>Matheus Gomes<br>
         E-mail: <a href="mailto:matheus.gomes@mogsistemasdigitais.com">matheus.gomes@mogsistemasdigitais.com</a><br>
-        WhatsApp: (51) 99169-4259</p><br>
+        WhatsApp: (51) 99169-4259
+      </p>
       <p>
         <a href="https://mogsistemasdigitais.github.io/landing-imobiliaria/institucional/" target="_blank">Conheça nossa empresa</a><br>
         <img src="logo_inicial_v1.png" alt="Logo MOG" style="max-width: 80px; margin-top: 10px;">
