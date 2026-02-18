@@ -3,98 +3,511 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MOG — Consultoria de Evolução Operacional com IA</title>
-  <meta name="description" content="Consultoria evolutiva de produtos digitais com IA aplicada: organizamos a operação, automatizamos tarefas e criamos agentes para reduzir esforço manual e aumentar previsibilidade." />
+  <title>MOG Sistemas Digitais — Evolução Operacional com IA</title>
+  <meta name="description" content="Organizamos a rotina do negócio e colocamos tarefas para rodarem automaticamente com apoio de IA." />
+
+  <!-- Fonte moderna -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
+    :root{
+      /* Paleta baseada no logo (tons aproximados) */
+      --g-900:#064a3b;
+      --g-800:#0b5a48;
+      --g-700:#0f6b56;
+      --g-600:#167a62;
+      --g-500:#1aa380; /* acento mais vivo */
+      --mint:#42d3b3;
+
+      --ink:#1f2937;
+      --muted:#4b5563;
+      --muted2:#6b7280;
+
+      --paper:#f7faf9;
+      --card:#ffffff;
+      --line: rgba(2, 84, 67, .12);
+
+      --shadow: 0 14px 40px rgba(17, 24, 39, .10);
+      --shadow2: 0 8px 22px rgba(17, 24, 39, .10);
+
+      --radius: 18px;
+      --radius2: 22px;
+
+      --max: 1080px;
+    }
+
+    *{ box-sizing: border-box; }
+    html{ scroll-behavior: smooth; }
     body{
       margin:0;
-      font-family:Arial, Helvetica, sans-serif;
-      background:#0b1412;
-      color:#fff;
-      line-height:1.5;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.6;
     }
-    .container{width:90%;max-width:1100px;margin:auto;}
-    header{background:linear-gradient(90deg,#015B4A,#027C67);padding:25px 0;text-align:center}
-    header img{max-height:60px}
-    section{padding:70px 0;border-bottom:1px solid rgba(255,255,255,.08)}
-    h1{font-size:40px;margin-bottom:15px}
-    h2{font-size:28px;margin-bottom:15px}
-    p{color:#d9e4e1}
-    .btn{display:inline-block;padding:14px 22px;background:#027C67;color:#fff;text-decoration:none;border-radius:6px;margin-top:20px;font-weight:bold}
-    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:30px}
-    .card{background:rgba(255,255,255,.05);padding:20px;border-radius:8px}
-    footer{text-align:center;padding:40px 0;color:#aaa}
+
+    /* Helpers */
+    .container{ width:min(var(--max), calc(100% - 40px)); margin:0 auto; }
+    .center{ text-align:center; }
+    .muted{ color: var(--muted); }
+    .muted2{ color: var(--muted2); }
+
+    /* Background “curves” por seção (sem imagens) */
+    .bg-hero{
+      background:
+        radial-gradient(900px 420px at 50% -50px, rgba(26,163,128,.22), transparent 65%),
+        radial-gradient(800px 380px at 15% 15%, rgba(66,211,179,.18), transparent 60%),
+        linear-gradient(180deg, rgba(6,74,59,.06), rgba(6,74,59,0) 60%);
+    }
+    .bg-problem{
+      background:
+        linear-gradient(180deg, rgba(6,74,59,.08), rgba(6,74,59,0) 55%),
+        radial-gradient(900px 420px at 85% 0%, rgba(26,163,128,.16), transparent 60%);
+    }
+    .bg-steps{
+      background:
+        linear-gradient(180deg, rgba(6,74,59,0), rgba(6,74,59,.08) 40%, rgba(6,74,59,0) 100%),
+        radial-gradient(900px 420px at 25% 10%, rgba(66,211,179,.14), transparent 60%);
+    }
+    .bg-portfolio{
+      background:
+        linear-gradient(180deg, rgba(6,74,59,.07), rgba(6,74,59,0) 70%),
+        radial-gradient(900px 420px at 50% 0%, rgba(26,163,128,.12), transparent 60%);
+    }
+    .bg-cta{
+      background:
+        radial-gradient(1000px 520px at 50% 0%, rgba(6,74,59,.26), rgba(6,74,59,.10) 45%, rgba(6,74,59,.08) 70%, rgba(6,74,59,.06) 100%),
+        linear-gradient(180deg, rgba(6,74,59,.16), rgba(6,74,59,.10));
+      color: #eef7f5;
+    }
+
+    /* Section spacing + dividers */
+    section{
+      position: relative;
+      padding: 64px 0;
+    }
+    .divider{
+      height: 1px;
+      background: rgba(2, 84, 67, .10);
+      width: 100%;
+    }
+
+    /* Header */
+    header{
+      padding: 26px 0 12px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:14px;
+      flex-direction: column;
+    }
+    .brand img{
+      height: 66px;
+      width: auto;
+      display:block;
+      filter: drop-shadow(0 10px 24px rgba(0,0,0,.10));
+    }
+
+    /* Typography */
+    h1{
+      margin: 18px 0 0;
+      font-size: clamp(30px, 3.6vw, 42px);
+      line-height: 1.12;
+      letter-spacing: -0.7px;
+      font-weight: 800;
+    }
+    h2{
+      margin: 0;
+      font-size: clamp(22px, 2.6vw, 30px);
+      line-height: 1.15;
+      letter-spacing: -0.4px;
+      font-weight: 800;
+    }
+    .lead{
+      margin: 14px auto 0;
+      max-width: 72ch;
+      font-size: 17px;
+    }
+    .lead strong{ color: var(--g-700); font-weight: 800; }
+
+    /* Buttons (padrão da última imagem) */
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding: 14px 28px;
+      border-radius: 14px;
+      font-weight: 800;
+      font-size: 15px;
+      text-decoration:none;
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 12px 26px rgba(0,0,0,.20);
+      transition: transform .12s ease, filter .12s ease;
+      user-select:none;
+      cursor:pointer;
+      white-space: nowrap;
+    }
+    .btn:hover{ transform: translateY(-1px); filter: brightness(1.05); }
+
+    .btn-primary{
+      color:#f2fffb;
+      background: linear-gradient(180deg, rgba(15,107,86,1), rgba(6,74,59,1));
+      border-color: rgba(255,255,255,.18);
+    }
+    .btn-primary span{
+      display:inline-flex;
+      width: 22px; height: 22px;
+      border-radius: 999px;
+      align-items:center; justify-content:center;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.14);
+      font-size: 14px;
+    }
+
+    /* Cards */
+    .grid-3{
+      margin-top: 28px;
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .grid-5{
+      margin-top: 22px;
+      display:grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+    }
+    .card{
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow2);
+      padding: 20px 18px;
+      text-align:left;
+    }
+    .card h3{
+      margin: 10px 0 0;
+      font-size: 18px;
+      letter-spacing: -0.2px;
+      font-weight: 800;
+    }
+    .card p{
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 14.8px;
+    }
+    .icon{
+      width: 58px;
+      height: 58px;
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(26,163,128,.12), rgba(6,74,59,.06));
+      border: 1px solid rgba(2, 84, 67, .10);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight: 900;
+      color: var(--g-800);
+      overflow:hidden;
+    }
+    .icon img{ width: 44px; height: 44px; object-fit: contain; }
+
+    /* Step cards (5 colunas) */
+    .step{
+      background: rgba(255,255,255,.92);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: var(--shadow2);
+      overflow:hidden;
+    }
+    .step-top{
+      height: 66px;
+      background: linear-gradient(135deg, rgba(26,163,128,.18), rgba(6,74,59,.06));
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding: 10px 12px;
+    }
+    .step-top .n{
+      width: 34px; height: 34px;
+      border-radius: 12px;
+      display:flex; align-items:center; justify-content:center;
+      font-weight: 900;
+      color: #0a5747;
+      background: rgba(255,255,255,.75);
+      border: 1px solid rgba(2, 84, 67, .12);
+    }
+    .step-top img{ width: 40px; height: 40px; object-fit: contain; }
+    .step-body{
+      padding: 12px 12px 14px;
+      text-align:left;
+    }
+    .step-body strong{
+      display:block;
+      font-weight: 900;
+      letter-spacing: -0.2px;
+    }
+    .step-body p{
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 13.8px;
+    }
+
+    /* Portfolio logos */
+    .logos{
+      margin-top: 18px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .logo-badge{
+      height: 34px;
+      width: auto;
+      opacity: .92;
+      filter: saturate(1.05);
+    }
+    .portfolio-actions{
+      margin-top: 18px;
+    }
+
+    /* CTA final */
+    .cta-wrap{
+      text-align:center;
+      padding: 74px 0 64px;
+    }
+    .cta-wrap h2{
+      color: #f1fffb;
+      font-size: clamp(26px, 3.0vw, 38px);
+      letter-spacing: -0.6px;
+    }
+    .cta-wrap p{
+      margin: 14px auto 0;
+      max-width: 78ch;
+      font-size: 17.5px;
+      color: rgba(238,247,245,.92);
+    }
+    .cta-actions{
+      margin-top: 22px;
+    }
+    .micro{
+      margin-top: 10px;
+      font-size: 13px;
+      color: rgba(238,247,245,.80);
+    }
+
+    /* Footer */
+    footer{
+      padding: 22px 0 26px;
+      text-align:center;
+      color: rgba(238,247,245,.85);
+      border-top: 1px solid rgba(255,255,255,.10);
+      background: linear-gradient(180deg, rgba(6,74,59,.10), rgba(6,74,59,.16));
+      font-size: 13.5px;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .grid-3{ grid-template-columns: 1fr; }
+      .grid-5{ grid-template-columns: 1fr; }
+      .brand img{ height: 60px; }
+    }
   </style>
 </head>
 
 <body>
 
-<header>
-  <img src="logo_inicial_v1.png" alt="MOG Sistemas Digitais">
-</header>
+  <!-- HERO / HEADER -->
+  <section class="bg-hero" id="inicio">
+    <div class="container center">
+      <header>
+        <div class="brand">
+          <!-- ajuste o caminho conforme seu repo: institucional/logo_inicial_01.jpg -->
+          <img src="logo_inicial_01.jpg" alt="MOG Sistemas Digitais" />
+        </div>
+      </header>
 
-<section>
-  <div class="container">
-    <h1>Se sua empresa parar hoje, algumas pessoas levam o negócio junto.</h1>
-    <p>Quando a operação depende de memória, conferência manual e decisões repetidas, o crescimento vira esforço — não escala.</p>
-    <p>Organizamos a rotina do negócio e colocamos tarefas para rodarem automaticamente com apoio de IA.</p>
-    <a class="btn" href="mailto:matheus.gomes@mogsistemasdigitais.com">Quero entender minha operação</a>
-  </div>
-</section>
+      <h1>Se sua empresa parar hoje, algumas pessoas levam o negócio junto.</h1>
 
-<section>
-  <div class="container">
-    <h2>O problema invisível</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Mais trabalho, menos controle</h3>
-        <p>O crescimento aumenta a complexidade mais rápido do que a organização.</p>
-      </div>
-      <div class="card">
-        <h3>Dependência de pessoas</h3>
-        <p>Quando alguém falta, a operação trava.</p>
-      </div>
-      <div class="card">
-        <h3>Decisão manual</h3>
-        <p>Tempo gasto conferindo ao invés de decidir.</p>
+      <p class="lead muted">
+        Quando a operação depende de memória, conferência manual e decisões repetidas, o crescimento vira
+        <strong>esforço — não escala.</strong>
+      </p>
+
+      <p class="lead muted">
+        Organizamos a rotina do negócio e colocamos tarefas para rodarem
+        <strong>automaticamente com apoio de IA.</strong>
+      </p>
+
+      <div style="margin-top:22px;">
+        <a class="btn btn-primary" href="mailto:matheus.gomes@mogsistemasdigitais.com?subject=Diagnóstico%20Operacional%20-%20MOG">
+          Quero entender minha operação <span aria-hidden="true">→</span>
+        </a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section>
-  <div class="container">
-    <h2>Como a operação evolui</h2>
-    <div class="cards">
-      <div class="card"><h3>1. Diagnóstico</h3><p>Mapeamos gargalos reais da rotina.</p></div>
-      <div class="card"><h3>2. Estrutura digital</h3><p>Organizamos o processo em um fluxo previsível.</p></div>
-      <div class="card"><h3>3. Automação</h3><p>Eliminamos tarefas repetitivas.</p></div>
-      <div class="card"><h3>4. IA aplicada</h3><p>Agentes executam análises e validações.</p></div>
-      <div class="card"><h3>5. Evolução contínua</h3><p>A operação melhora junto com o negócio.</p></div>
+  <div class="divider"></div>
+
+  <!-- PROBLEMA -->
+  <section class="bg-problem" id="problema">
+    <div class="container center">
+      <h2>O problema invisível</h2>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="icon">
+            <!-- coloque seus ícones aqui (png/svg). Ex: icons/controle.png -->
+            <img src="icons/controle.png" alt="" onerror="this.remove(); this.parentElement.textContent='▦';">
+          </div>
+          <h3>Mais trabalho, menos controle</h3>
+          <p>O crescimento aumenta a complexidade mais rápido do que a organização.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">
+            <img src="icons/pessoa.png" alt="" onerror="this.remove(); this.parentElement.textContent='👥';">
+          </div>
+          <h3>Dependência de pessoas</h3>
+          <p>Quando alguém falta, o negócio trava.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">
+            <img src="icons/decisao.png" alt="" onerror="this.remove(); this.parentElement.textContent='✓';">
+          </div>
+          <h3>Decisão manual</h3>
+          <p>Tempo gasto conferindo ao invés de decidir.</p>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section>
-  <div class="container">
-    <h2>Para quem faz sentido</h2>
-    <p>Empresas que já operam e querem escalar sem aumentar equipe.</p>
-    <p>Não indicado para quem busca apenas criar um aplicativo isolado.</p>
-  </div>
-</section>
+  <div class="divider"></div>
 
-<section>
-  <div class="container">
-    <h2>Vamos analisar sua operação</h2>
-    <p>Uma conversa inicial para identificar onde há esforço manual e previsibilidade baixa.</p>
-    <a class="btn" href="mailto:matheus.gomes@mogsistemasdigitais.com">Iniciar diagnóstico</a>
-  </div>
-</section>
+  <!-- EVOLUÇÃO -->
+  <section class="bg-steps" id="evolucao">
+    <div class="container center">
+      <h2>Como a operação evolui</h2>
 
-<footer>
-  © 2026 MOG Sistemas Digitais
-</footer>
+      <div class="grid-5">
+        <div class="step">
+          <div class="step-top">
+            <div class="n">1</div>
+            <img src="icons/1.png" alt="" onerror="this.remove();">
+          </div>
+          <div class="step-body">
+            <strong>Diagnóstico</strong>
+            <p>Mapeamos gargalos reais da rotina.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-top">
+            <div class="n">2</div>
+            <img src="icons/2.png" alt="" onerror="this.remove();">
+          </div>
+          <div class="step-body">
+            <strong>Estrutura digital</strong>
+            <p>Organizamos o fluxo previsível.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-top">
+            <div class="n">3</div>
+            <img src="icons/3.png" alt="" onerror="this.remove();">
+          </div>
+          <div class="step-body">
+            <strong>Automação</strong>
+            <p>Eliminamos tarefas repetitivas.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-top">
+            <div class="n">4</div>
+            <img src="icons/4.png" alt="" onerror="this.remove();">
+          </div>
+          <div class="step-body">
+            <strong>IA aplicada</strong>
+            <p>Agentes executam análises.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-top">
+            <div class="n">5</div>
+            <img src="icons/5.png" alt="" onerror="this.remove();">
+          </div>
+          <div class="step-body">
+            <strong>Evolução contínua</strong>
+            <p>A operação melhora junto.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- PORTFÓLIO / PROVA SOCIAL -->
+  <section class="bg-portfolio" id="portfolio">
+    <div class="container center">
+      <h2>Empresas ajudadas pela abordagem</h2>
+      <p class="lead muted">Sinais de confiança: clientes e times que já colocaram essa evolução em prática.</p>
+
+      <!-- Use imagens reais de logos (png/svg) na pasta /logos -->
+      <div class="logos" aria-label="Logos de clientes">
+        <img class="logo-badge" src="logos/assai.png" alt="Assaí" onerror="this.style.display='none';">
+        <img class="logo-badge" src="logos/next.png" alt="Next" onerror="this.style.display='none';">
+        <img class="logo-badge" src="logos/cvc.png" alt="CVC" onerror="this.style.display='none';">
+        <img class="logo-badge" src="logos/cdsc.png" alt="CDSC" onerror="this.style.display='none';">
+        <img class="logo-badge" src="logos/cresol.png" alt="Cresol" onerror="this.style.display='none';">
+      </div>
+
+      <div class="portfolio-actions">
+        <a class="btn btn-primary" href="#cta">
+          Iniciar diagnóstico <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="bg-cta" id="cta">
+    <div class="container">
+      <div class="cta-wrap">
+        <h2>Vamos mapear onde sua operação está perdendo tempo — e onde dá pra rodar melhor com IA.</h2>
+
+        <p>
+          Essa primeira conversa é para entender seu contexto, identificar gargalos e mostrar oportunidades práticas de
+          automação e agentes de IA. Você sai com um diagnóstico inicial do que traria mais previsibilidade e menos retrabalho.
+        </p>
+
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="mailto:matheus.gomes@mogsistemasdigitais.com?subject=Diagnóstico%20Operacional%20-%20MOG">
+            Iniciar diagnóstico <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div class="micro">Sem proposta comercial nesta etapa.</div>
+      </div>
+    </div>
+
+    <footer>
+      © <span id="year"></span> MOG Sistemas Digitais — Todos os direitos reservados.
+    </footer>
+  </section>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
