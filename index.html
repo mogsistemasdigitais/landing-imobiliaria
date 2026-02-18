@@ -4,26 +4,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Locação Digital para Imobiliárias</title>
+
+  <!-- (Opcional, mas recomendado) -->
+  <meta name="description" content="Plataforma white-label 100% digital para locação e venda de imóveis, integrada ao site da imobiliária. Pesquisa com imobiliárias do litoral norte do RS." />
+
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
       color: #333;
+      line-height: 1.5;
     }
+
     header {
       background: linear-gradient(90deg, #015B4A, #027C67);
       padding: 30px 20px;
       text-align: center;
     }
+
     header img {
       max-width: 240px;
       height: auto;
     }
+
     .container {
       max-width: 960px;
       margin: 40px auto;
@@ -32,19 +37,26 @@
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
+
     h1, h2, h3 {
       color: #015B4A;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
+
+    p { margin-bottom: 16px; }
+    strong { font-weight: 700; }
+
+    /* Lista de funcionalidades */
     .features {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
-      margin: 30px 0;
+      margin: 24px 0 28px;
       padding: 0;
       list-style: none;
       justify-content: space-between;
     }
+
     .features li {
       flex: 1 1 45%;
       background-color: #e1f6f0;
@@ -53,17 +65,26 @@
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
       font-size: 1rem;
     }
+
     @media (max-width: 600px) {
-      .features li {
-        flex: 1 1 100%;
-      }
+      .container { padding: 24px; }
+      .features li { flex: 1 1 100%; }
     }
+
     .highlight {
       background-color: #e1f6f0;
       border-left: 4px solid #26C1A1;
       padding: 20px;
-      margin: 20px 0;
+      margin: 20px 0 28px;
     }
+
+    /* Corrige recuo/bolinhas da lista no highlight */
+    .highlight ul {
+      padding-left: 20px;
+      list-style: disc;
+    }
+    .highlight li { margin-bottom: 8px; }
+
     .button {
       display: inline-block;
       background-color: #027C67;
@@ -71,37 +92,51 @@
       padding: 12px 24px;
       text-decoration: none;
       border-radius: 5px;
-      margin-top: 20px;
+      margin-top: 8px;
     }
-    a {
-      color: #027C67;
+
+    /* Estados de interação e acessibilidade */
+    .button:hover { filter: brightness(0.95); }
+    .button:focus {
+      outline: 3px solid rgba(38, 193, 161, 0.6);
+      outline-offset: 3px;
     }
+
+    a { color: #027C67; }
+
     .footer {
       margin-top: 40px;
       font-size: 0.9em;
       text-align: center;
       color: #666;
     }
+
+    .footer p { margin-bottom: 10px; }
   </style>
 </head>
+
 <body>
   <header>
     <img src="logo_inicial_v1.png" alt="Logo MOG Sistemas Digitais" />
   </header>
 
-  <div class="container">
+  <main class="container">
     <h1>Transforme sua Imobiliária com uma Plataforma 100% Digital</h1>
+
     <p><strong>Sua imobiliária pode liderar uma nova fase do mercado digital!</strong></p>
+
     <p>
-      Estamos ouvindo imobiliárias da região de Tramandaí e litoral norte do RS para entender como melhorar os processos de <strong>locação e venda online</strong>. 
-	  A partir disso, estamos avaliando uma <strong>solução white-label, 100% digital</strong>, integrada ao seu site e com a sua identidade — <strong>sem precisar trocar de sistema</strong>.
+      Estamos ouvindo imobiliárias da região de Tramandaí e litoral norte do RS para entender como melhorar os processos de
+      <strong>locação e venda online</strong>.
+      A partir disso, estamos avaliando uma <strong>solução white-label, 100% digital</strong>,
+      integrada ao seu site e com a sua identidade — <strong>sem precisar trocar de sistema</strong>.
     </p>
-	<br>
+
     <p>
-      A proposta é criar, junto com o mercado local, uma plataforma que <strong>melhore a experiência do cliente, otimize o atendimento da equipe e modernize o processo do início ao fim</strong>.
+      A proposta é criar, junto com o mercado local, uma plataforma que
+      <strong>melhore a experiência do cliente, otimize o atendimento da equipe e modernize o processo do início ao fim</strong>.
     </p>
-	<br>
-	<br>
+
     <h2>Funcionalidades da Plataforma</h2>
     <ul class="features">
       <li>Agendamento de visitas online (presenciais e virtuais)</li>
@@ -114,7 +149,7 @@
       <li>Customização com a identidade visual da imobiliária</li>
     </ul>
 
-    <h2> Por que participar da pesquisa?</h2>
+    <h2>Por que participar da pesquisa?</h2>
     <div class="highlight">
       <ul>
         <li>Contribua com uma solução pensada para a realidade das imobiliárias da região</li>
@@ -128,29 +163,46 @@
     <p>
       Imobiliárias de pequeno e médio porte de Tramandaí, Imbé, Capão da Canoa, Xangri-lá e região.
     </p>
-	<br>
 
     <h3>Inscreva-se como parceiro-piloto</h3>
     <p>
       Quer conhecer a plataforma, participar do piloto e modernizar sua operação?
     </p>
-    <a href="https://forms.gle/R22xMDAnUMBVQ4ECA" target="_blank" class="button">Quero Participar</a>
-	<br>
-	<br>
+
+    <a
+      href="https://forms.gle/R22xMDAnUMBVQ4ECA"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="button"
+    >
+      Quero Participar
+    </a>
+
     <p><strong>Ao clicar no botão, você responderá um formulário que nos permite entender seu cenário atual e oferecer uma proposta alinhada às suas necessidades.</strong></p>
 
     <div class="footer">
       <h3>Contato direto</h3>
-      <p>Matheus Gomes<br>
+      <p>
+        Matheus Gomes<br>
         E-mail: <a href="mailto:matheus.gomes@mogsistemasdigitais.com">matheus.gomes@mogsistemasdigitais.com</a><br>
         WhatsApp: (51) 99169-4259
       </p>
+
       <p>
-        <a href="https://mogsistemasdigitais.github.io/landing-page-institucional/institucional/" target="_blank">Conheça nossa empresa</a><br>
-        <img src="logo_inicial_v1.png" alt="Logo MOG" style="max-width: 80px; margin-top: 10px;">
+        <a href="https://mogsistemasdigitais.github.io/landing-page-institucional/institucional/" target="_blank" rel="noopener noreferrer">
+          Conheça nossa empresa
+        </a><br>
+
+        <img
+          src="logo_inicial_v1.png"
+          alt="Logo MOG"
+          loading="lazy"
+          style="max-width: 80px; margin-top: 10px;"
+        >
       </p>
+
       <p>&copy; 2025 MOG Sistemas Digitais — Todos os direitos reservados.</p>
     </div>
-  </div>
+  </main>
 </body>
 </html>
